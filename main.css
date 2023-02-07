@@ -13,6 +13,9 @@
     height: 5rem;
     background: #222;
     padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 9;
  }
  
  .nav-title {
@@ -29,15 +32,23 @@
     margin: 0 auto;
  }
  
- .hero {
-    background: linear-gradient(
-        to right,
-        rgba(105, 62, 27, 0.5),
-        rgba(105, 62, 27, 1)
-        ),
-        url('./images/Background-Coffee.jpg') center/cover;
+.hero {
     min-height: calc(100vh - 5rem);
- }
+    background: rgba(105, 62, 27, 1);
+    position: relative;
+}
+
+@media screen and (min-width: 768px){
+    .hero {
+        background: linear-gradient(
+            to right,
+            rgba(105, 62, 27, 0.5),
+            rgba(105, 62, 27, 1)
+            ),
+            url('./images/Background-Coffee.jpg') center/cover;
+        min-height: calc(100vh - 5rem);
+     }
+}
 
  .hero-center {
     width: 90vw;
@@ -45,6 +56,11 @@
     margin: 0 auto;
     padding: 5rem 0;
     color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
  }
 
  .hero-center h1 {
@@ -54,8 +70,9 @@
  }
 
  .hero-center p {
-    margin-bottom: 1.5rem;
-    max-width: 35em;
+     max-width: 35em;
+     margin: 0 auto;
+     margin-bottom: 1.5rem;
  }
 
  .hero-btn {
@@ -65,4 +82,9 @@
     text-transform: uppercase;
     color: #fff;
     letter-spacing: 2px;
+ }
+
+ .temp {
+    min-height: 100vh;
+
  }
